@@ -1,0 +1,22 @@
+{
+  "string": "",
+  "[]string": "",
+  "map[string][]string": "#json",
+  "int": "",
+  "error": "",
+  "*v201703120.Instance":"#json",
+  "*v20180525.AddExistedInstancesResponse": ".ToJsonString",
+  "*AddInstanceInfo": "#json",
+  "*CreateOrderInfo": "#json",
+  "*v20180525.DescribeClustersResponse": ".ToJsonString",
+  "*DestroyRsp": "#json",
+  "*v201703120.DescribeInstancesResponse": ".ToJsonString",
+  "[]*v20170312.Disk": "#json",
+  "*v201703120.ModifyInstancesAttributeResponse": ".ToJsonString",
+  "*QueryOrderRsp": "#json",
+  "*GetMachineInfoRsp": "#json",
+  "[]GetMachineInfoData": "#json",
+  "*res_manager.MachineInfo": "#json",
+  "*CmdResponse": "#json",
+  "*MachineStateRsp": "#json"
+}
