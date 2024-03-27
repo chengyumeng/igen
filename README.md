@@ -14,7 +14,7 @@
 ### 日志
 生成代码中可以自带函数的 Req 和 Rsp，以及函数执行耗时。你需要保证引入的 log 包，包含如下函数
 ```golang
-log.Infof(ctx context.Context, format string, args ...interface{})
+log.Infof(format string, args ...interface{})
 ```
 
 为在生成的代码中自动 import 对应的 log 包，你需要指定如下参数

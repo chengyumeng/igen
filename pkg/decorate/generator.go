@@ -33,6 +33,7 @@ type generator struct {
 	copyrightHeader string
 	functions       map[string]string
 	imports         []string
+	logger          string
 	prom            string
 
 	packageMap map[string]string // map from import path to package name
@@ -278,14 +279,7 @@ func (g *generator) generateFunction(argTypes, argNames []string, rets, retNames
 		}
 	}
 
-	ctx := "context.Background()"
-	for idx, v := range argTypes {
-		if v == "context.Context" {
-			ctx = argNames[idx]
-		}
-	}
-
-	g.p(`log.Infof(%s,"function: %s, time: %s req: %s rsp: %s",time.Since(%s),%s,%s)`, ctx, m.Name, "%s", req, rsp, bg, strings.Join(reqArgv, ","), strings.Join(rspArgv, ","))
+	g.p(`%s("function: %s, time: %s req: %s rsp: %s",time.Since(%s),%s,%s)`, g.logger, m.Name, "%s", req, rsp, bg, strings.Join(reqArgv, ","), strings.Join(rspArgv, ","))
 }
 
 func (g *generator) fmt(arr, names []string, ia identifierAllocator) (layout string, args []string) {

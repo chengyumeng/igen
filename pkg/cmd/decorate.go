@@ -31,4 +31,6 @@ func init() {
 	DecorateCmd.Flags().StringVarP(&DecorateConfig.SelfPackage, "self-package", "p", "", "The full package import path for the generated code")
 	DecorateCmd.Flags().StringVarP(&DecorateConfig.Imports, "imports", "i", "", "Specify the imported package additionally")
 	DecorateCmd.Flags().StringVarP(&DecorateConfig.Prom, "prom", "", "", "prometheus function template,example: prom.Create")
+	DecorateCmd.Flags().StringVarP(&DecorateConfig.Logger, "log", "", "klog.Infof", "log function")
+
 }

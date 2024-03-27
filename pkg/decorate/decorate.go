@@ -27,6 +27,7 @@ type Config struct {
 	ExplainFile   string
 	CopyrightFile string
 	Imports       string
+	Logger        string
 	Prom          string
 }
 
@@ -88,6 +89,7 @@ func (d *Decorator) CreateGenerator() {
 		destination: d.Destination,
 		auditNames:  map[string]string{},
 		imports:     strings.Split(d.Imports, ","),
+		logger:      d.Logger,
 		prom:        d.Prom,
 	}
 
